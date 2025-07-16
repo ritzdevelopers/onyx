@@ -612,6 +612,128 @@
     </div>
   </section>
 
+  <button id="scrollToTop"
+    class="md:flex fixed bottom-8 right-8 bg-green-600 hover:bg-green-700 text-white p-3 rounded-full shadow-lg transition-opacity duration-300 opacity-0 pointer-events-none z-50"
+    aria-label="Scroll to top" style="display: none;">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+      stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
+    </svg>
+  </button>
+
+  <script>
+    const scrollBtn = document.getElementById('scrollToTop');
+
+    // Show/hide with opacity and pointer-events
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 100) {
+        scrollBtn.style.display = "flex";  // show button container
+        setTimeout(() => {
+          scrollBtn.classList.remove('opacity-0', 'pointer-events-none');
+        }, 10);
+      } else {
+        scrollBtn.classList.add('opacity-0', 'pointer-events-none');
+        // Hide after transition to avoid it blocking clicks
+        setTimeout(() => {
+          scrollBtn.style.display = "none";
+        }, 300); // match transition duration
+      }
+    });
+
+    scrollBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+
+  <!-- Popup Overlay -->
+  <div id="popupOverlay"
+    class="fixed inset-0 bg-black/80 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 z-50">
+    <!-- Popup Container -->
+    <div id="popupContainer"
+      class="bg-white rounded-lg shadow-lg max-w-4xl w-full mx-4 md:mx-0 flex flex-col md:flex-row overflow-hidden transform scale-90 opacity-0 transition-all duration-300">
+      <!-- Left Image -->
+      <div class="md:w-1/2 h-64 md:h-auto">
+        <img src="./assets/hero_bg.png" alt="Popup Image" class="w-full h-full object-cover" />
+      </div>
+
+      <!-- Right Form -->
+      <div class="md:w-1/2 p-8 relative">
+        <!-- Close Button -->
+        <button id="popupCloseBtn"
+          class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl font-bold focus:outline-none"
+          aria-label="Close popup">
+          &times;
+        </button>
+
+        <h2 class="text-2xl font-bold mb-6">Get in Touch</h2>
+        <form class="space-y-4">
+          <input type="text" placeholder="Your Name"
+            class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-600"
+            required />
+          <input type="email" placeholder="Your Email"
+            class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-600"
+            required />
+          <textarea placeholder="Your Message" rows="4"
+            class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-600"
+            required></textarea>
+          <button type="submit"
+            class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded transition">
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const popupOverlay = document.getElementById('popupOverlay');
+    const popupContainer = document.getElementById('popupContainer');
+    const closeBtn = document.getElementById('popupCloseBtn');
+
+    // Function to show popup with animation
+    function showPopup() {
+      popupOverlay.style.pointerEvents = 'auto';
+      popupOverlay.classList.remove('opacity-0');
+      popupOverlay.classList.add('opacity-100');
+
+      // Animate popup container scale & opacity
+      popupContainer.style.opacity = '1';
+      popupContainer.style.transform = 'scale(1)';
+    }
+
+    // Function to hide popup with animation
+    function hidePopup() {
+      popupOverlay.classList.remove('opacity-100');
+      popupOverlay.classList.add('opacity-0');
+      popupOverlay.style.pointerEvents = 'none';
+
+      popupContainer.style.opacity = '0';
+      popupContainer.style.transform = 'scale(0.9)';
+    }
+
+    // Show popup after 1 second on page load
+    window.addEventListener('load', () => {
+      setTimeout(showPopup, 1000);
+    });
+
+    // Close popup on close button click
+    closeBtn.addEventListener('click', hidePopup);
+
+    // Close popup on clicking outside the container
+    popupOverlay.addEventListener('click', (e) => {
+      if (e.target === popupOverlay) {
+        hidePopup();
+      }
+    });
+
+    // Optional: prevent form submission for demo
+    document.querySelector('form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      alert('Form submitted!');
+      hidePopup();
+    });
+  </script>
+
 
 
   <!-- DO NOT CHANGE BELOW THIS COMMENT -->
