@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>CRC</title>
+  <style>
+    :root {
+      font-family: 'Roboto', sans-serif;
+      scroll-behavior: smooth;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header id="header"
+    class="fixed top-0 left-0 w-full bg-[#324F43] shadow z-50 transition-transform duration-300 px-[80px] py-4 text-[18px]"
+    data-aos="fade-down">
+    <div class="flex justify-between items-center">
+      <!-- Logo -->
+      <div class="text-2xl font-bold">
+        <img src="./assets/logo.png" alt="logo" class="w-[150px]">
+      </div>
+
+      <!-- Nav Links (Desktop only) -->
+      <nav class="hidden md:flex gap-8 text-white  font-medium">
+        <a href="#home" class="hover:text-[#198754] transition">Home</a>
+        <a href="#features" class="hover:text-[#198754] transition">Amenities</a>
+        <a href="#pricing" class="hover:text-[#198754] transition">Price List</a>
+        <a href="#contact" class="hover:text-[#198754] transition">Floor Plan</a>
+        <a href="#contact" class="hover:text-[#198754] transition">Gallery</a>
+        <a href="#contact" class="hover:text-[#198754] transition">Location</a>
+      </nav>
+
+      <!-- CTA Button (Desktop only) -->
+      <div class="hidden md:block">
+        <button
+          class="border border-[#198754] text-[white] px-6 py-2 rounded-4xl hover:bg-[#198754] cursor-pointer transition">
+          +91-0000000000
+        </button>
+      </div>
+
+      <!-- Hamburger Icon (Mobile only) -->
+      <div class="md:hidden cursor-pointer" id="hamburger">
+        <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobileMenu"
+    class="fixed inset-0 bg-white z-40 transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden">
+    <div class="flex flex-col h-full p-6 relative">
+      <button id="closeMenu" class="absolute top-4 right-4 text-gray-700 text-2xl">
+        &times;
+      </button>
+      <nav class="mt-12 space-y-6 text-xl font-medium text-gray-800">
+        <a href="#home" class="block">Home</a>
+        <a href="#features" class="block">Features</a>
+        <a href="#pricing" class="block">Pricing</a>
+        <a href="#contact" class="block">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="min-h-screen flex items-center bg-cover bg-center px-[80px] py-16"
+    style="background-image: url('./assets/hero_bg.png');" data-aos="fade-in">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full">
+      <!-- Left Content -->
+      <div class="text-white space-y-6 max-w-xl ">
+        <p class="text-sm uppercase tracking-wider flex items-center gap-2">
+          <i class="fa-solid fa-star text-yellow-400"></i> Premium Offer
+        </p>
+
+        <h1 class="text-4xl md:text-5xl font-bold leading-tight">
+          Discover Your Dream <br />
+          <!-- <span class="text-[#324F43] animate-pulse">Home Today</span> -->
+        </h1>
+
+        <p class="flex items-center gap-2 text-lg text-gray-100">
+          <i class="ri-map-pin-2-fill text-red-500"></i> San Francisco, CA
+        </p>
+
+        <p class="text-gray-200">
+          Find the perfect place for you and your family. Fully furnished, close to downtown, and eco-friendly.
+        </p>
+
+        <!-- Price Box -->
+        <div class="bg-white text-gray-900 inline-block px-6 py-3 rounded shadow text-lg font-semibold">
+          Starting from <span class="text-[#324F43]">$1,499/month</span>
+        </div>
+
+        <!-- Animated Tagline -->
+        <div class="mt-4 bg-[#324F43] text-white px-4 py-2 inline-block rounded animate-bounce font-medium">
+          Limited-Time Offer!
+        </div>
+      </div>
+
+      <!-- Right CTA Form -->
+      <div class="bg-white bg-opacity-90 rounded-lg shadow-lg p-8 w-full max-w-md mx-auto" data-aos="fade-left">
+        <h3 class="text-2xl font-bold text-gray-800 mb-6">Request a Callback</h3>
+        <form class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+            <input type="text" placeholder="Your full name"
+              class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-[#324F43]" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+            <input type="email" placeholder="you@example.com"
+              class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-[#324F43]" />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-1">Phone</label>
+            <input type="tel" placeholder="+1 234 567 8900"
+              class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-[#324F43]" />
+          </div>
+          <button type="submit" class="w-full bg-[#324F43] text-white py-2 rounded hover:bg-blue-700 transition">
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- DO NOT CHANGE BELOW THIS COMMENT -->
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+</body>
+
+</html>
