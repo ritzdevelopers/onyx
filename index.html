@@ -48,7 +48,7 @@
       <div class="flex justify-between items-center">
         <!-- Logo -->
         <div class="text-2xl font-bold">
-          <img src="./assets/logo.png" alt="logo" class="w-[150px]" />
+          <img src="./assets/logo.webp" alt="logo" class="w-[150px]" />
         </div>
 
         <!-- Nav Links (Desktop only) -->
@@ -130,11 +130,14 @@
     <section
       id="home"
       class="min-h-screen flex items-center bg-cover bg-center px-5 md:px-[80px] py-15"
-      style="background-image: url('./assets/hero_bg.png')"
+      style="background-image: url('./assets/hero_bg.webp')"
       data-aos="fade-in"
     >
+      <!-- Overlay on Background Image -->
+      <div class="absolute inset-0 bg-black/50 backdrop-blur-xs z-0"></div>
+
       <div
-        class="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full items-center mt-7"
+        class="relative grid grid-cols-1 lg:grid-cols-2 gap-12 w-full items-center mt-7 z-10"
       >
         <!-- Left Content -->
         <div
@@ -536,31 +539,12 @@
           <div
             class="absolute top-0 left-0 w-full h-full bg-black/40 backdrop-blur-sm flex items-center justify-center"
           >
-            <button
+            <a
+              href="#contact"
               class="bg-green-600 text-white font-semibold py-2 px-6 rounded-md cursor-pointer"
             >
               Download Floor Plan
-            </button>
-          </div>
-        </div>
-
-        <div class="relative rounded-lg overflow-hidden shadow-lg bg-white">
-          <!-- Image Placeholder -->
-          <img
-            src="./assets/hero_bg.png"
-            alt="Retail Zone Floor Plan"
-            class="w-full h-64 object-cover"
-          />
-
-          <!-- Overlay with Blur and CTA -->
-          <div
-            class="absolute top-0 left-0 w-full h-full bg-black/40 backdrop-blur-sm flex items-center justify-center"
-          >
-            <button
-              class="bg-green-600 text-white font-semibold py-2 px-6 rounded-md cursor-pointer"
-            >
-              Download Floor Plan
-            </button>
+            </a>
           </div>
         </div>
         <div class="relative rounded-lg overflow-hidden shadow-lg bg-white">
@@ -575,11 +559,32 @@
           <div
             class="absolute top-0 left-0 w-full h-full bg-black/40 backdrop-blur-sm flex items-center justify-center"
           >
-            <button
+            <a
+              href="#contact"
               class="bg-green-600 text-white font-semibold py-2 px-6 rounded-md cursor-pointer"
             >
               Download Floor Plan
-            </button>
+            </a>
+          </div>
+        </div>
+        <div class="relative rounded-lg overflow-hidden shadow-lg bg-white">
+          <!-- Image Placeholder -->
+          <img
+            src="./assets/hero_bg.png"
+            alt="Retail Zone Floor Plan"
+            class="w-full h-64 object-cover"
+          />
+
+          <!-- Overlay with Blur and CTA -->
+          <div
+            class="absolute top-0 left-0 w-full h-full bg-black/40 backdrop-blur-sm flex items-center justify-center"
+          >
+            <a
+              href="#contact"
+              class="bg-green-600 text-white font-semibold py-2 px-6 rounded-md cursor-pointer"
+            >
+              Download Floor Plan
+            </a>
           </div>
         </div>
       </div>
