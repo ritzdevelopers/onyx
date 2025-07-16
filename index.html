@@ -13,6 +13,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://unpkg.com/feather-icons"></script>
+
   <title>CRC</title>
   <link rel="stylesheet" href="style.css">
   <style>
@@ -96,7 +98,7 @@
           <i class="ri-map-pin-2-fill text-[#3AB24B]"></i> At Sector 142, Noida
         </p>
 
-        <p class="text-[25px] text-gray-200">
+        <p class="sm:text-[25px] text-[16px] text-gray-200">
           NOIDA’s upcoming premium address in the Noida-Greater Noida Expressway, ONYX, is the innovative amalgamation
           of global
           business standards, modern design, and Lifestyle experience. This project is crafted for visionary brands and
@@ -272,6 +274,93 @@
   </section>
 
 
+  <!-- Ameniteis section -->
+  <section class="bg-[#324F43]">
+    <div class="max-w-6xl mx-auto px-4 py-12 ">
+      <!-- Section Title -->
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-white">
+        Amenities
+      </h2>
+
+      <!-- Amenities Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+        <!-- Card Template -->
+        <div data-aos="fade-up" class="flex flex-col items-center text-center space-y-4 border border-gray-300 rounded-lg shadow-md p-6 bg-white
+                 hover:shadow-xl hover:-translate-y-2 transition duration-300 ease-in-out">
+          <div class="bg-indigo-100 text-black p-5 rounded-lg w-16 h-16 flex items-center justify-center">
+            <i data-feather="bell" class="w-8 h-8"></i>
+          </div>
+          <p class="text-lg font-semibold">
+            Intelligent Fire Alarm System
+          </p>
+        </div>
+
+
+
+        <div data-aos="fade-up" class="flex flex-col items-center text-center space-y-4 border border-gray-300 rounded-lg shadow-md p-6 bg-white
+               hover:shadow-xl hover:-translate-y-2 transition duration-300 ease-in-out">
+          <div class="bg-green-100 text-black p-5 rounded-lg w-16 h-16 flex items-center justify-center">
+            <i data-feather="zap" class="w-8 h-8"></i>
+          </div>
+          <p class="text-lg font-semibold">
+            EV Charging Points for a future-ready infrastructure
+          </p>
+        </div>
+
+        <div data-aos="fade-up" class="flex flex-col items-center text-center space-y-4 border border-gray-300 rounded-lg shadow-md p-6 bg-white
+               hover:shadow-xl hover:-translate-y-2 transition duration-300 ease-in-out">
+          <div class="bg-red-100 text-black p-5 rounded-lg w-16 h-16 flex items-center justify-center">
+            <i data-feather="shield" class="w-8 h-8"></i>
+          </div>
+          <p class="text-lg font-semibold">
+            CCTV Surveillance & 24/7 Manned Security
+          </p>
+        </div>
+
+        <div data-aos="fade-up" class="flex flex-col items-center text-center space-y-4 border border-gray-300 rounded-lg shadow-md p-6 bg-white
+               hover:shadow-xl hover:-translate-y-2 transition duration-300 ease-in-out">
+          <div class="bg-blue-100 text-black p-5 rounded-lg w-16 h-16 flex items-center justify-center">
+            <i data-feather="wifi" class="w-8 h-8"></i>
+          </div>
+          <p class="text-lg font-semibold">
+            Seamless Internet / Wi-Fi Connectivity
+          </p>
+        </div>
+
+        <div data-aos="fade-up" class="flex flex-col items-center text-center space-y-4 border border-gray-300 rounded-lg shadow-md p-6 bg-white
+               hover:shadow-xl hover:-translate-y-2 transition duration-300 ease-in-out">
+          <div class="bg-yellow-100 text-black p-5 rounded-lg w-16 h-16 flex items-center justify-center">
+            <i data-feather="layers" class="w-8 h-8"></i>
+          </div>
+          <p class="text-lg font-semibold">
+            3-Level Parking with easy access
+          </p>
+        </div>
+
+        <div data-aos="fade-up" class="flex flex-col items-center text-center space-y-4 border border-gray-300 rounded-lg shadow-md p-6 bg-white
+               hover:shadow-xl hover:-translate-y-2 transition duration-500 ease-in-out">
+          <div class="bg-pink-100 text-black p-5 rounded-lg w-16 h-16 flex items-center justify-center">
+            <i data-feather="smile" class="w-8 h-8"></i>
+          </div>
+          <p class="text-lg font-semibold">
+            Designated Smoking Zones
+          </p>
+        </div>
+
+        <div data-aos="fade-up" class="flex flex-col items-center text-center space-y-4 border border-gray-300 rounded-lg shadow-md p-6 bg-white
+               hover:shadow-xl hover:-translate-y-2 transition duration-300 ease-in-out">
+          <div class="bg-teal-100 text-black p-5 rounded-lg w-16 h-16 flex items-center justify-center">
+            <i data-feather="plus" class="w-8 h-8"></i>
+          </div>
+          <p class="text-lg font-semibold">
+            On-site Pharmacy for convenience
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
 
   <!-- DO NOT CHANGE BELOW THIS COMMENT -->
@@ -280,6 +369,7 @@
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <script>
     AOS.init();
+    feather.replace();
   </script>
   <script>
     const swiper = new Swiper('.swiper', {
