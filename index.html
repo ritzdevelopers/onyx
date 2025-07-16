@@ -1,790 +1,1058 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+      integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://unpkg.com/feather-icons"></script>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
-    integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script src="https://unpkg.com/feather-icons"></script>
+    <title>ONYX</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      :root {
+        font-family: "Roboto", sans-serif;
+        scroll-behavior: smooth;
+      }
+    </style>
+  </head>
 
-  <title>ONYX</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    :root {
-      font-family: 'Roboto', sans-serif;
-      scroll-behavior: smooth;
-    }
-  </style>
-</head>
+  <body>
+    <!-- HEADER -->
+    <header
+      id="header"
+      class="fixed top-0 left-0 w-full bg-[#324F43] shadow z-50 transition-transform duration-300 px-[80px] py-4 text-[18px]"
+      data-aos="fade-down"
+    >
+      <div class="flex justify-between items-center">
+        <!-- Logo -->
+        <div class="text-2xl font-bold">
+          <img src="./assets/logo.png" alt="logo" class="w-[150px]" />
+        </div>
 
-<body>
-  <!-- HEADER -->
-  <header id="header"
-    class="fixed top-0 left-0 w-full bg-[#324F43] shadow z-50 transition-transform duration-300 px-[80px] py-4 text-[18px]"
-    data-aos="fade-down">
-    <div class="flex justify-between items-center">
-      <!-- Logo -->
-      <div class="text-2xl font-bold">
-        <img src="./assets/logo.png" alt="logo" class="w-[150px]">
+        <!-- Nav Links (Desktop only) -->
+        <nav class="hidden md:flex gap-8 text-white font-medium">
+          <a href="#home" class="hover:text-[#198754] transition">Home</a>
+          <a href="#overview" class="hover:text-[#198754] transition"
+            >OverView</a
+          >
+          <a href="#offerings" class="hover:text-[#198754] transition"
+            >Project Offerings</a
+          >
+          <a href="#amenities" class="hover:text-[#198754] transition"
+            >Amenities</a
+          >
+          <a href="#floors" class="hover:text-[#198754] transition"
+            >Floor Plans</a
+          >
+          <a href="#gallery" class="hover:text-[#198754] transition">Gallery</a>
+          <a href="#highlight" class="hover:text-[#198754] transition"
+            >Highlight</a
+          >
+          <a href="#contact" class="hover:text-[#198754] transition">Contact</a>
+        </nav>
+
+        <!-- CTA Button (Desktop only) -->
+        <div class="hidden md:block">
+          <button
+            class="border border-[#198754] text-[white] px-6 py-2 rounded-4xl hover:bg-[#198754] cursor-pointer transition"
+          >
+            +91-0000000000
+          </button>
+        </div>
+
+        <!-- Hamburger Icon (Mobile only) -->
+        <div class="md:hidden cursor-pointer" id="hamburger">
+          <svg
+            class="w-6 h-6 text-white"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+        </div>
       </div>
+    </header>
 
-      <!-- Nav Links (Desktop only) -->
-      <nav class="hidden md:flex gap-8 text-white  font-medium">
-        <a href="#home" class="hover:text-[#198754] transition">Home</a>
-        <a href="#features" class="hover:text-[#198754] transition">Amenities</a>
-        <a href="#pricing" class="hover:text-[#198754] transition">Price List</a>
-        <a href="#contact" class="hover:text-[#198754] transition">Floor Plan</a>
-        <a href="#contact" class="hover:text-[#198754] transition">Gallery</a>
-        <a href="#contact" class="hover:text-[#198754] transition">Location</a>
-      </nav>
-
-      <!-- CTA Button (Desktop only) -->
-      <div class="hidden md:block">
+    <!-- Mobile Menu Overlay -->
+    <div
+      id="mobileMenu"
+      class="fixed inset-0 bg-white z-40 transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden"
+    >
+      <div class="flex flex-col h-full p-6 relative">
         <button
-          class="border border-[#198754] text-[white] px-6 py-2 rounded-4xl hover:bg-[#198754] cursor-pointer transition">
-          +91-0000000000
+          id="closeMenu"
+          class="absolute top-4 right-4 text-gray-700 text-2xl"
+        >
+          &times;
         </button>
-      </div>
-
-      <!-- Hamburger Icon (Mobile only) -->
-      <div class="md:hidden cursor-pointer" id="hamburger">
-        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-        </svg>
+        <nav class="mt-20 space-y-6 text-xl font-medium text-gray-800">
+          <a href="#home" class="block">Home</a>
+          <a href="#overview" class="block">OverView</a>
+          <a href="#offerings" class="block">Project Offerings</a>
+          <a href="#amenities" class="block">Amenities</a>
+          <a href="#floors" class="block">Floor Plans</a>
+          <a href="#gallery" class="block">Gallery</a>
+          <a href="#highlight" class="block">Highlight</a>
+          <a href="#contact" class="block">Contact</a>
+        </nav>
       </div>
     </div>
-  </header>
 
-  <!-- Mobile Menu Overlay -->
-  <div id="mobileMenu"
-    class="fixed inset-0 bg-white z-40 transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden">
-    <div class="flex flex-col h-full p-6 relative">
-      <button id="closeMenu" class="absolute top-4 right-4 text-gray-700 text-2xl">
-        &times;
-      </button>
-      <nav class="mt-12 space-y-6 text-xl font-medium text-gray-800">
-        <a href="#home" class="block">Home</a>
-        <a href="#features" class="block">Features</a>
-        <a href="#pricing" class="block">Pricing</a>
-        <a href="#contact" class="block">Contact</a>
-      </nav>
-    </div>
-  </div>
+    <!-- HERO SECTION -->
+    <section
+      id="home"
+      class="min-h-screen flex items-center bg-cover bg-center px-5 md:px-[80px] py-15"
+      style="background-image: url('./assets/hero_bg.png')"
+      data-aos="fade-in"
+    >
+      <div
+        class="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full items-center mt-7"
+      >
+        <!-- Left Content -->
+        <div
+          class="text-white space-y-6 max-w-xl sm:max-w-3xl mx-auto lg:mx-0 text-center lg:text-left"
+        >
+          <p
+            class="text-[25px] uppercase tracking-wider flex items-center gap-2 justify-center lg:justify-start text-[#3AB24B] font-bold"
+          >
+            Welcome to ONYX by Splendor
+          </p>
 
-  <!-- HERO SECTION -->
-  <section class="min-h-screen flex items-center bg-cover bg-center px-5 md:px-[80px] py-15"
-    style="background-image: url('./assets/hero_bg.png');" data-aos="fade-in">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full items-center mt-7">
-      <!-- Left Content -->
-      <div class="text-white space-y-6 max-w-xl sm:max-w-3xl mx-auto lg:mx-0 text-center lg:text-left">
-        <p
-          class="text-[25px] uppercase tracking-wider flex items-center gap-2 justify-center lg:justify-start text-[#3AB24B] font-bold">
-          Welcome to ONYX by Splendor
-        </p>
+          <h1 class="text-4xl md:text-[45px] font-bold leading-tight">
+            The Landmark of Business, Retail & Culinary Luxury
+          </h1>
 
-        <h1 class="text-4xl md:text-[45px] font-bold leading-tight">
-          The Landmark of Business, Retail & Culinary Luxury
-        </h1>
+          <p
+            class="flex items-center justify-center lg:justify-start gap-2 text-[25px] text-gray-100"
+          >
+            <i class="ri-map-pin-2-fill text-[#3AB24B]"></i> At Sector 142,
+            Noida
+          </p>
 
-        <p class="flex items-center justify-center lg:justify-start gap-2 text-[25px] text-gray-100">
-          <i class="ri-map-pin-2-fill text-[#3AB24B]"></i> At Sector 142, Noida
-        </p>
+          <p class="sm:text-[25px] text-[16px] text-gray-200">
+            NOIDA’s upcoming premium address in the Noida-Greater Noida
+            Expressway, ONYX, is the innovative amalgamation of global business
+            standards, modern design, and Lifestyle experience. This project is
+            crafted for visionary brands and businesses to thrive with
+            future-forward enterprises and culinary experiences that await them.
+          </p>
 
-        <p class="sm:text-[25px] text-[16px] text-gray-200">
-          NOIDA’s upcoming premium address in the Noida-Greater Noida Expressway, ONYX, is the innovative amalgamation
-          of global
-          business standards, modern design, and Lifestyle experience. This project is crafted for visionary brands and
-          businesses
-          to thrive with future-forward enterprises and culinary experiences that await them.
-        </p>
-
-        <div class="flex flex-col gap-2">
-          <!-- Price Box -->
-          <!-- <div class=" text-gray-900 bg-white w-[300px] inline-block px-6 py-3 rounded shadow  font-semibold">
+          <div class="flex flex-col gap-2">
+            <!-- Price Box -->
+            <!-- <div class=" text-gray-900 bg-white w-[300px] inline-block px-6 py-3 rounded shadow  font-semibold">
             Starting from <span class="text-[#324F43] text-[20px]">$1,499/month</span>
           </div> -->
 
-          <!-- Animated Tagline -->
+            <!-- Animated Tagline -->
+            <div
+              class="bg-[#324F43] w-[200px] text-white mt-5 px-4 py-2 inline-block rounded animate-bounce font-medium text-[18px]"
+            >
+              Limited-Time Offer!
+            </div>
+          </div>
+        </div>
+
+        <!-- Right CTA Form -->
+        <div
+          class="bg-[#324F43] text-white bg-opacity-90 rounded-lg shadow-lg p-6 sm:p-8 w-full max-w-md mx-auto"
+          data-aos="fade-right"
+        >
+          <h3
+            class="text-2xl font-bold text-[#3AB24B] text-center lg:text-left"
+          >
+            Schedule A Site Visit
+          </h3>
+          <p>
+            Please fill out the form below, our expert will get back to you
+            soon.
+          </p>
+          <form class="space-y-4 mt-5">
+            <div>
+              <input
+                type="text"
+                placeholder="Your full name"
+                class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-[#324F43]"
+              />
+            </div>
+            <div>
+              <input
+                type="email"
+                placeholder="you@example.com"
+                class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-[#324F43]"
+              />
+            </div>
+            <div>
+              <input
+                type="tel"
+                placeholder="+1 234 567 8900"
+                class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-[#324F43]"
+              />
+            </div>
+            <button
+              type="submit"
+              class="w-full text-white py-2 rounded cursor-pointer hover:bg-[#3AB24B] transition bg-gradient-to-r from-[#324F43] via-[#3AB24B] to-[#324F43] hover:scale-105"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Overview section -->
+    <section id="overview" class="bg-[#324F43] sm:h-[80vh] flex items-center">
+      <div
+        class="container mx-auto px-6 sm:px-9 md:px-130 lg:px-21 flex flex-col lg:flex-row items-center justify-between gap-10 mb-5 sm:mb-0"
+      >
+        <!-- Left: Image -->
+        <div class="w-full lg:w-1/2 flex justify-center" data-aos="fade-right">
           <div
-            class="bg-[#324F43] w-[200px] text-white mt-5 px-4 py-2 inline-block rounded animate-bounce font-medium text-[18px]">
-            Limited-Time Offer!
+            class="image-border-wrapper rounded-tl-[30px] overflow-hidden max-w-full"
+            style="max-width: 500px"
+          >
+            <img
+              src="./assets/overview.png"
+              alt="Overview Image"
+              class="rounded-tl-[30px] object-cover w-full max-w-[500px] sm:max-w-[500px] xs:max-w-[300px]"
+            />
           </div>
         </div>
-      </div>
 
-      <!-- Right CTA Form -->
-      <div class="bg-[#324F43] text-white bg-opacity-90 rounded-lg shadow-lg p-6 sm:p-8 w-full max-w-md mx-auto"
-        data-aos="fade-right">
-        <h3 class="text-2xl font-bold text-[#3AB24B]  text-center lg:text-left">Schedule A Site Visit</h3>
-        <p>Please fill out the form below, our expert will get back to you soon.</p>
-        <form class="space-y-4 mt-5">
-          <div>
-            <input type="text" placeholder="Your full name"
-              class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-[#324F43]" />
-          </div>
-          <div>
-            <input type="email" placeholder="you@example.com"
-              class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-[#324F43]" />
-          </div>
-          <div>
-            <input type="tel" placeholder="+1 234 567 8900"
-              class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-[#324F43]" />
-          </div>
-          <button type="submit"
-            class="w-full  text-white py-2 rounded cursor-pointer hover:bg-[#3AB24B] transition bg-gradient-to-r from-[#324F43] via-[#3AB24B] to-[#324F43] hover:scale-105">
-            Submit
-          </button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- Overview section -->
-  <section class="bg-[#324F43] sm:h-[80vh] flex items-center">
-    <div
-      class="container mx-auto px-6 sm:px-9 md:px-130 lg:px-21 flex flex-col lg:flex-row items-center justify-between gap-10 mb-5 sm:mb-0">
-
-      <!-- Left: Image -->
-      <div class="w-full lg:w-1/2 flex justify-center" data-aos="fade-right">
-        <div class="image-border-wrapper rounded-tl-[30px] overflow-hidden max-w-full" style="max-width: 500px;">
-          <img src="./assets/overview.png" alt="Overview Image"
-            class="rounded-tl-[30px] object-cover w-full max-w-[500px] sm:max-w-[500px] xs:max-w-[300px]">
-        </div>
-      </div>
-
-      <!-- Right: Text Content -->
-      <div class="w-full lg:w-1/2 text-center lg:text-left px-2 sm:px-0" data-aos="fade-right">
-        <p
-          class="text-[14px] sm:text-[15px] md:text-[17px] uppercase tracking-widest text-[#3AB24B] mb-2 flex justify-center lg:justify-start items-center">
-          <i class="fas fa-info-circle mr-2"></i>Overview
-        </p>
-        <h2 class="text-[25px] sm:text-[32px] md:text-[38px] font-bold text-[#3AB24B] mb-2">
-          An Icon Rises in the Heart of Noida
-        </h2>
+        <!-- Right: Text Content -->
         <div
-          class="text-white text-[16px] sm:text-[18px] md:text-[24px] mb-4 flex justify-center lg:justify-start items-center gap-2">
-          <span>Where Business Meets Brilliance. And Lifestyle Meets Legacy.</span>
+          class="w-full lg:w-1/2 text-center lg:text-left px-2 sm:px-0"
+          data-aos="fade-right"
+        >
+          <p
+            class="text-[14px] sm:text-[15px] md:text-[17px] uppercase tracking-widest text-[#3AB24B] mb-2 flex justify-center lg:justify-start items-center"
+          >
+            <i class="fas fa-info-circle mr-2"></i>Overview
+          </p>
+          <h2
+            class="text-[25px] sm:text-[32px] md:text-[38px] font-bold text-[#3AB24B] mb-2"
+          >
+            An Icon Rises in the Heart of Noida
+          </h2>
+          <div
+            class="text-white text-[16px] sm:text-[18px] md:text-[24px] mb-4 flex justify-center lg:justify-start items-center gap-2"
+          >
+            <span
+              >Where Business Meets Brilliance. And Lifestyle Meets
+              Legacy.</span
+            >
+          </div>
+          <p
+            class="text-white mb-6 text-[14px] sm:text-[15px] md:text-[17px] max-w-xl mx-auto lg:mx-0 leading-relaxed"
+          >
+            ONYX by Splendour is a commercial development built for the future.
+            Located in Sector 142, NOIDA, it offers modern office spaces,
+            High-Street Retail, Luxury Business Suites, and World-Class food
+            court spaces. This comes with exceptional connectivity,
+            climate-controlled design, and excellent corporate catchment. ONYX
+            is more than a workplace, It the next breakthrough in business.
+          </p>
+          <a
+            href="#contact"
+            class="bg-[#3AB24B] hover:bg-[#324F49] text-white px-5 sm:px-6 py-2 rounded shadow transition cursor-pointer inline-flex items-center mx-auto lg:mx-0"
+          >
+            Book a Site Visit
+          </a>
         </div>
-        <p class="text-white mb-6 text-[14px] sm:text-[15px] md:text-[17px] max-w-xl mx-auto lg:mx-0 leading-relaxed">
-          ONYX by Splendour is a commercial development built for the future. Located in Sector 142, NOIDA, it offers
-          modern
-          office spaces, High-Street Retail, Luxury Business Suites, and World-Class food court spaces. This comes with
-          exceptional connectivity, climate-controlled design, and excellent corporate catchment. ONYX is more than a
-          workplace,
-          It the next breakthrough in business.
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="offerings" class="items-center justify-center min-h-screen">
+      <h1
+        class="text-[25px] sm:text-[32px] text-center pt-10 md:text-[38px] font-bold text-[#3AB24B] mb-2"
+      >
+        PROJECT OFFERINGS
+      </h1>
+
+      <div class="swiper w-[90vw] h-[80vh]">
+        <div class="swiper-wrapper">
+          <!-- Slide 1 -->
+          <div
+            class="swiper-slide slide-bg relative"
+            style="background-image: url('./assets/hero_bg.png')"
+          >
+            <!-- Overlay to center text -->
+            <div
+              class="absolute inset-0 bg-black/40 flex items-center justify-center text-center px-4"
+            >
+              <div class="text-white">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">
+                  Office Spaces
+                </h2>
+                <p class="text-lg md:text-xl text-center max-w-2xl">
+                  Modern and efficient spaces with sizes starting from 526 sq
+                  ft. curated for rapidly growing enterprises and
+                  well-established corporate enterprises. Complemented by a
+                  grand lobby, high-speed elevators, and multiple breakout zones
+                  that redefine the working experience.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div
+            class="swiper-slide slide-bg relative"
+            style="background-image: url('./assets/hero_bg.png')"
+          >
+            <!-- Overlay to center text -->
+            <div
+              class="absolute inset-0 bg-black/40 flex items-center justify-center text-center px-4"
+            >
+              <div class="text-white">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">
+                  Retail Spaces
+                </h2>
+                <p class="text-lg md:text-xl text-center max-w-2xl">
+                  Retail stores with double floor height are optimized for
+                  premium footfall. These spaces are ideal for Fashion,
+                  Lifestyle, Wellness, and Anchor Brands that aim to tap into
+                  the high-income catchment.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div
+            class="swiper-slide slide-bg relative"
+            style="background-image: url('./assets/hero_bg.png')"
+          >
+            <!-- Overlay to center text -->
+            <div
+              class="absolute inset-0 bg-black/40 flex items-center justify-center text-center px-4"
+            >
+              <div class="text-white">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">
+                  Food Court – Gourmet @ ONYX
+                </h2>
+                <p class="text-lg md:text-xl text-center max-w-2xl">
+                  NOIDA’s upcoming gourmet destination that blends global
+                  culinary experiences and abstract design with a
+                  climate-controlled environment. It is perfect for global
+                  franchise restaurants looking to tap into NOIDA’s elite
+                  consumer base.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div
+            class="swiper-slide slide-bg relative"
+            style="background-image: url('./assets/hero_bg.png')"
+          >
+            <!-- Overlay to center text -->
+            <div
+              class="absolute inset-0 bg-black/40 flex items-center justify-center text-center px-4"
+            >
+              <div class="text-white">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">
+                  Office Suites
+                </h2>
+                <p class="text-lg md:text-xl text-center max-w-2xl">
+                  Efficient and spacious business suites that are built for
+                  professionals, Consultants, Startups, and Satellite Offices.
+                  These spaces offer a Plug-and-play design that meets all
+                  requirements of privacy and performance.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Swiper Controls -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </section>
+
+    <!-- Ameniteis section -->
+    <section id="amenities" class="bg-[#324F43]">
+      <div class="max-w-6xl mx-auto px-4 py-12">
+        <!-- Section Title -->
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-white">
+          Amenities
+        </h2>
+
+        <!-- Amenities Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <!-- Card Template -->
+          <div
+            data-aos="fade-up"
+            class="flex flex-col items-center text-center space-y-4 border border-gray-300 rounded-lg shadow-md p-6 bg-white hover:shadow-xl hover:-translate-y-2 transition duration-300 ease-in-out"
+          >
+            <div
+              class="bg-indigo-100 text-black p-5 rounded-lg w-16 h-16 flex items-center justify-center"
+            >
+              <i data-feather="bell" class="w-8 h-8"></i>
+            </div>
+            <p class="text-lg font-semibold">Intelligent Fire Alarm System</p>
+          </div>
+
+          <div
+            data-aos="fade-up"
+            class="flex flex-col items-center text-center space-y-4 border border-gray-300 rounded-lg shadow-md p-6 bg-white hover:shadow-xl hover:-translate-y-2 transition duration-300 ease-in-out"
+          >
+            <div
+              class="bg-green-100 text-black p-5 rounded-lg w-16 h-16 flex items-center justify-center"
+            >
+              <i data-feather="zap" class="w-8 h-8"></i>
+            </div>
+            <p class="text-lg font-semibold">
+              EV Charging Points for a future-ready infrastructure
+            </p>
+          </div>
+
+          <div
+            data-aos="fade-up"
+            class="flex flex-col items-center text-center space-y-4 border border-gray-300 rounded-lg shadow-md p-6 bg-white hover:shadow-xl hover:-translate-y-2 transition duration-300 ease-in-out"
+          >
+            <div
+              class="bg-red-100 text-black p-5 rounded-lg w-16 h-16 flex items-center justify-center"
+            >
+              <i data-feather="shield" class="w-8 h-8"></i>
+            </div>
+            <p class="text-lg font-semibold">
+              CCTV Surveillance & 24/7 Manned Security
+            </p>
+          </div>
+
+          <div
+            data-aos="fade-up"
+            class="flex flex-col items-center text-center space-y-4 border border-gray-300 rounded-lg shadow-md p-6 bg-white hover:shadow-xl hover:-translate-y-2 transition duration-300 ease-in-out"
+          >
+            <div
+              class="bg-blue-100 text-black p-5 rounded-lg w-16 h-16 flex items-center justify-center"
+            >
+              <i data-feather="wifi" class="w-8 h-8"></i>
+            </div>
+            <p class="text-lg font-semibold">
+              Seamless Internet / Wi-Fi Connectivity
+            </p>
+          </div>
+
+          <div
+            data-aos="fade-up"
+            class="flex flex-col items-center text-center space-y-4 border border-gray-300 rounded-lg shadow-md p-6 bg-white hover:shadow-xl hover:-translate-y-2 transition duration-300 ease-in-out"
+          >
+            <div
+              class="bg-yellow-100 text-black p-5 rounded-lg w-16 h-16 flex items-center justify-center"
+            >
+              <i data-feather="layers" class="w-8 h-8"></i>
+            </div>
+            <p class="text-lg font-semibold">
+              3-Level Parking with easy access
+            </p>
+          </div>
+
+          <div
+            data-aos="fade-up"
+            class="flex flex-col items-center text-center space-y-4 border border-gray-300 rounded-lg shadow-md p-6 bg-white hover:shadow-xl hover:-translate-y-2 transition duration-500 ease-in-out"
+          >
+            <div
+              class="bg-pink-100 text-black p-5 rounded-lg w-16 h-16 flex items-center justify-center"
+            >
+              <i data-feather="smile" class="w-8 h-8"></i>
+            </div>
+            <p class="text-lg font-semibold">Designated Smoking Zones</p>
+          </div>
+
+          <div
+            data-aos="fade-up"
+            class="flex flex-col items-center text-center space-y-4 border border-gray-300 rounded-lg shadow-md p-6 bg-white hover:shadow-xl hover:-translate-y-2 transition duration-300 ease-in-out"
+          >
+            <div
+              class="bg-teal-100 text-black p-5 rounded-lg w-16 h-16 flex items-center justify-center"
+            >
+              <i data-feather="plus" class="w-8 h-8"></i>
+            </div>
+            <p class="text-lg font-semibold">
+              On-site Pharmacy for convenience
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Floor Plans -->
+    <section id="floors" class="py-12 px-4 bg-gray-50">
+      <div class="max-w-7xl mx-auto text-center mb-10">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Floor Plan</h2>
+        <p class="mt-4 text-gray-700 max-w-3xl mx-auto">
+          Explore our floor-wise breakdown of retail zones, office levels, and
+          the food court at Gourmet @ ONYX—designed for flow, visibility, and
+          functionality.
         </p>
-        <button
-          class="bg-[#3AB24B] hover:bg-[#324F49] text-white px-5 sm:px-6 py-2 rounded shadow transition cursor-pointer inline-flex items-center mx-auto lg:mx-0">
-          Book a Site Visit
-        </button>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- Projects -->
-  <section class="items-center justify-center min-h-screen">
-
-    <h1 class="text-[25px] sm:text-[32px] text-center pt-10 md:text-[38px] font-bold text-[#3AB24B] mb-2">PROJECT
-      OFFERINGS
-    </h1>
-
-    <div class="swiper w-[90vw] h-[80vh]">
-      <div class="swiper-wrapper">
-        <!-- Slide 1 -->
-        <div class="swiper-slide slide-bg relative" style="background-image: url('./assets/hero_bg.png');">
-          <!-- Overlay to center text -->
-          <div class="absolute inset-0 bg-black/40 flex items-center justify-center text-center px-4">
-            <div class="text-white">
-              <h2 class="text-3xl md:text-5xl font-bold mb-4">Office Spaces</h2>
-              <p class="text-lg md:text-xl text-center max-w-2xl">Modern and efficient spaces with sizes
-                starting from
-                526 sq ft.
-                curated for
-                rapidly growing enterprises and
-                well-established corporate enterprises. Complemented by a grand lobby, high-speed elevators, and
-                multiple breakout zones
-                that redefine the working experience.
-              </p>
-            </div>
-          </div>
-        </div>
-
-
-        <!-- Slide 2 -->
-        <div class="swiper-slide slide-bg relative" style="background-image: url('./assets/hero_bg.png');">
-          <!-- Overlay to center text -->
-          <div class="absolute inset-0 bg-black/40 flex items-center justify-center text-center px-4">
-            <div class="text-white">
-              <h2 class="text-3xl md:text-5xl font-bold mb-4">Retail Spaces</h2>
-              <p class="text-lg md:text-xl text-center max-w-2xl">Retail stores with double floor height are optimized
-                for premium footfall.
-                These spaces are ideal for Fashion,
-                Lifestyle, Wellness, and Anchor Brands that aim to tap into the high-income catchment.</p>
-            </div>
-          </div>
-        </div>
-
-
-        <!-- Slide 3 -->
-        <div class="swiper-slide slide-bg relative" style="background-image: url('./assets/hero_bg.png');">
-          <!-- Overlay to center text -->
-          <div class="absolute inset-0 bg-black/40 flex items-center justify-center text-center px-4">
-            <div class="text-white">
-              <h2 class="text-3xl md:text-5xl font-bold mb-4">Food Court – Gourmet @ ONYX</h2>
-              <p class="text-lg md:text-xl text-center max-w-2xl">NOIDA’s upcoming gourmet destination that blends
-                global culinary experiences
-                and abstract design with a
-                climate-controlled environment. It is perfect for global franchise restaurants looking to tap into
-                NOIDA’s elite
-                consumer base.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 4 -->
-        <div class="swiper-slide slide-bg relative" style="background-image: url('./assets/hero_bg.png');">
-          <!-- Overlay to center text -->
-          <div class="absolute inset-0 bg-black/40 flex items-center justify-center text-center px-4">
-            <div class="text-white">
-              <h2 class="text-3xl md:text-5xl font-bold mb-4">Office Suites</h2>
-              <p class="text-lg md:text-xl text-center max-w-2xl">Efficient and spacious business suites that are built
-                for professionals,
-                Consultants, Startups, and Satellite Offices.
-                These spaces offer a Plug-and-play design that meets all requirements of privacy and performance.</p>
-            </div>
-          </div>
-        </div>
-
       </div>
 
-      <!-- Swiper Controls -->
-      <div class="swiper-pagination"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
-    </div>
-  </section>
-
-
-  <!-- Ameniteis section -->
-  <section class="bg-[#324F43]">
-    <div class="max-w-6xl mx-auto px-4 py-12 ">
-      <!-- Section Title -->
-      <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-white">
-        Amenities
-      </h2>
-
-      <!-- Amenities Grid -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+      >
         <!-- Card Template -->
-        <div data-aos="fade-up" class="flex flex-col items-center text-center space-y-4 border border-gray-300 rounded-lg shadow-md p-6 bg-white
-                 hover:shadow-xl hover:-translate-y-2 transition duration-300 ease-in-out">
-          <div class="bg-indigo-100 text-black p-5 rounded-lg w-16 h-16 flex items-center justify-center">
-            <i data-feather="bell" class="w-8 h-8"></i>
+        <div class="relative rounded-lg overflow-hidden shadow-lg bg-white">
+          <!-- Image Placeholder -->
+          <img
+            src="./assets/hero_bg.png"
+            alt="Retail Zone Floor Plan"
+            class="w-full h-64 object-cover"
+          />
+
+          <!-- Overlay with Blur and CTA -->
+          <div
+            class="absolute top-0 left-0 w-full h-full bg-black/40 backdrop-blur-sm flex items-center justify-center"
+          >
+            <button
+              class="bg-green-600 text-white font-semibold py-2 px-6 rounded-md cursor-pointer"
+            >
+              Download Floor Plan
+            </button>
           </div>
-          <p class="text-lg font-semibold">
-            Intelligent Fire Alarm System
-          </p>
         </div>
 
+        <div class="relative rounded-lg overflow-hidden shadow-lg bg-white">
+          <!-- Image Placeholder -->
+          <img
+            src="./assets/hero_bg.png"
+            alt="Retail Zone Floor Plan"
+            class="w-full h-64 object-cover"
+          />
 
-
-        <div data-aos="fade-up" class="flex flex-col items-center text-center space-y-4 border border-gray-300 rounded-lg shadow-md p-6 bg-white
-               hover:shadow-xl hover:-translate-y-2 transition duration-300 ease-in-out">
-          <div class="bg-green-100 text-black p-5 rounded-lg w-16 h-16 flex items-center justify-center">
-            <i data-feather="zap" class="w-8 h-8"></i>
+          <!-- Overlay with Blur and CTA -->
+          <div
+            class="absolute top-0 left-0 w-full h-full bg-black/40 backdrop-blur-sm flex items-center justify-center"
+          >
+            <button
+              class="bg-green-600 text-white font-semibold py-2 px-6 rounded-md cursor-pointer"
+            >
+              Download Floor Plan
+            </button>
           </div>
-          <p class="text-lg font-semibold">
-            EV Charging Points for a future-ready infrastructure
-          </p>
         </div>
+        <div class="relative rounded-lg overflow-hidden shadow-lg bg-white">
+          <!-- Image Placeholder -->
+          <img
+            src="./assets/hero_bg.png"
+            alt="Retail Zone Floor Plan"
+            class="w-full h-64 object-cover"
+          />
 
-        <div data-aos="fade-up" class="flex flex-col items-center text-center space-y-4 border border-gray-300 rounded-lg shadow-md p-6 bg-white
-               hover:shadow-xl hover:-translate-y-2 transition duration-300 ease-in-out">
-          <div class="bg-red-100 text-black p-5 rounded-lg w-16 h-16 flex items-center justify-center">
-            <i data-feather="shield" class="w-8 h-8"></i>
+          <!-- Overlay with Blur and CTA -->
+          <div
+            class="absolute top-0 left-0 w-full h-full bg-black/40 backdrop-blur-sm flex items-center justify-center"
+          >
+            <button
+              class="bg-green-600 text-white font-semibold py-2 px-6 rounded-md cursor-pointer"
+            >
+              Download Floor Plan
+            </button>
           </div>
-          <p class="text-lg font-semibold">
-            CCTV Surveillance & 24/7 Manned Security
-          </p>
-        </div>
-
-        <div data-aos="fade-up" class="flex flex-col items-center text-center space-y-4 border border-gray-300 rounded-lg shadow-md p-6 bg-white
-               hover:shadow-xl hover:-translate-y-2 transition duration-300 ease-in-out">
-          <div class="bg-blue-100 text-black p-5 rounded-lg w-16 h-16 flex items-center justify-center">
-            <i data-feather="wifi" class="w-8 h-8"></i>
-          </div>
-          <p class="text-lg font-semibold">
-            Seamless Internet / Wi-Fi Connectivity
-          </p>
-        </div>
-
-        <div data-aos="fade-up" class="flex flex-col items-center text-center space-y-4 border border-gray-300 rounded-lg shadow-md p-6 bg-white
-               hover:shadow-xl hover:-translate-y-2 transition duration-300 ease-in-out">
-          <div class="bg-yellow-100 text-black p-5 rounded-lg w-16 h-16 flex items-center justify-center">
-            <i data-feather="layers" class="w-8 h-8"></i>
-          </div>
-          <p class="text-lg font-semibold">
-            3-Level Parking with easy access
-          </p>
-        </div>
-
-        <div data-aos="fade-up" class="flex flex-col items-center text-center space-y-4 border border-gray-300 rounded-lg shadow-md p-6 bg-white
-               hover:shadow-xl hover:-translate-y-2 transition duration-500 ease-in-out">
-          <div class="bg-pink-100 text-black p-5 rounded-lg w-16 h-16 flex items-center justify-center">
-            <i data-feather="smile" class="w-8 h-8"></i>
-          </div>
-          <p class="text-lg font-semibold">
-            Designated Smoking Zones
-          </p>
-        </div>
-
-        <div data-aos="fade-up" class="flex flex-col items-center text-center space-y-4 border border-gray-300 rounded-lg shadow-md p-6 bg-white
-               hover:shadow-xl hover:-translate-y-2 transition duration-300 ease-in-out">
-          <div class="bg-teal-100 text-black p-5 rounded-lg w-16 h-16 flex items-center justify-center">
-            <i data-feather="plus" class="w-8 h-8"></i>
-          </div>
-          <p class="text-lg font-semibold">
-            On-site Pharmacy for convenience
-          </p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="py-12 px-4 bg-gray-50">
-    <div class="max-w-7xl mx-auto text-center mb-10">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-800">
-        Floor Plan
+    <!-- Gallery Section -->
+    <section id="gallery" class="mx-auto px-4 py-12 bg-[#213E33]">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-white">
+        Gallery
       </h2>
-      <p class="mt-4 text-gray-700 max-w-3xl mx-auto">
-        Explore our floor-wise breakdown of retail zones, office levels, and the food court at Gourmet @ ONYX—designed
-        for
-        flow, visibility, and functionality.
-      </p>
-    </div>
 
-    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Card Template -->
-      <div class="relative group rounded-lg overflow-hidden shadow-lg bg-white ">
-        <!-- Image Placeholder -->
-        <img src="./assets/hero_bg.png" alt="Retail Zone Floor Plan" class="w-full h-64 object-cover" />
-
-        <!-- Overlay CTA -->
-        <div
-          class="absolute top-0 left-0 w-full h-full bg-black/50 flex items-start justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <button
-            class="mt-[-100%] group-hover:mt-0 transition-all duration-500 bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded-b-md cursor-pointer">
-            Download Floor Plan
-          </button>
+      <div class="swiper swiper-gallery">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide rounded-lg overflow-hidden">
+            <img
+              src="./assets/hero_bg.png"
+              alt="Gallery Image 1"
+              class="w-full h-[300px] object-cover"
+              data-aos="fade-up"
+            />
+          </div>
+          <div class="swiper-slide rounded-lg overflow-hidden">
+            <img
+              src="./assets/hero_bg.png"
+              alt="Gallery Image 2"
+              class="w-full h-[300px] object-cover"
+              data-aos="fade-down"
+            />
+          </div>
+          <div class="swiper-slide rounded-lg overflow-hidden">
+            <img
+              src="./assets/hero_bg.png"
+              alt="Gallery Image 3"
+              class="w-full h-[300px] object-cover"
+              data-aos="fade-up"
+            />
+          </div>
+          <div class="swiper-slide rounded-lg overflow-hidden">
+            <img
+              src="./assets/hero_bg.png"
+              alt="Gallery Image 4"
+              class="w-full h-[300px] object-cover"
+              data-aos="fade-down"
+            />
+          </div>
+          <div class="swiper-slide rounded-lg overflow-hidden">
+            <img
+              src="./assets/overview.png"
+              alt="Gallery Image 5"
+              class="w-full h-[300px] object-cover"
+              data-aos="fade-up"
+            />
+          </div>
+          <div class="swiper-slide rounded-lg overflow-hidden">
+            <img
+              src="./assets/overview.png"
+              alt="Gallery Image 6"
+              class="w-full h-[300px] object-cover"
+              data-aos="fade-down"
+            />
+          </div>
+          <div class="swiper-slide rounded-lg overflow-hidden">
+            <img
+              src="./assets/overview.png"
+              alt="Gallery Image 1"
+              class="w-full h-[300px] object-cover"
+              data-aos="fade-up"
+            />
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="relative group rounded-lg overflow-hidden shadow-lg bg-white ">
-        <img src="./assets/hero_bg.png" alt="Office Levels Floor Plan" class="w-full h-64 object-cover" />
-        <div
-          class="absolute top-0 left-0 w-full h-full bg-black/50 flex items-start justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <button
-            class="mt-[-100%] group-hover:mt-0 transition-all duration-500 bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded-b-md cursor-pointer">
-            Download Floor Plan
-          </button>
-        </div>
-      </div>
-
-      <div class="relative group rounded-lg overflow-hidden shadow-lg bg-white ">
-        <img src="./assets/hero_bg.png" alt="Food Court Floor Plan" class="w-full h-64 object-cover" />
-        <div
-          class="absolute top-0 left-0 w-full h-full bg-black/50 flex items-start justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <button
-            class="mt-[-100%] group-hover:mt-0 transition-all duration-500 bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded-b-md cursor-pointer">
-            Download Floor Plan
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Gallery Section -->
-  <section class=" mx-auto px-4 py-12 bg-[#213E33]">
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-white">Gallery</h2>
-
-    <div class="swiper swiper-gallery">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide rounded-lg overflow-hidden">
-          <img src="./assets/hero_bg.png" alt="Gallery Image 1" class="w-full h-[300px] object-cover"
-            data-aos="fade-up" />
-        </div>
-        <div class="swiper-slide rounded-lg overflow-hidden">
-          <img src="./assets/hero_bg.png" alt="Gallery Image 2" class="w-full h-[300px] object-cover"
-            data-aos="fade-down" />
-        </div>
-        <div class="swiper-slide rounded-lg overflow-hidden">
-          <img src="./assets/hero_bg.png" alt="Gallery Image 3" class="w-full h-[300px] object-cover"
-            data-aos="fade-up" />
-        </div>
-        <div class="swiper-slide rounded-lg overflow-hidden">
-          <img src="./assets/hero_bg.png" alt="Gallery Image 4" class="w-full h-[300px] object-cover"
-            data-aos="fade-down" />
-        </div>
-        <div class="swiper-slide rounded-lg overflow-hidden">
-          <img src="./assets/overview.png" alt="Gallery Image 5" class="w-full h-[300px] object-cover"
-            data-aos="fade-up" />
-        </div>
-        <div class="swiper-slide rounded-lg overflow-hidden">
-          <img src="./assets/overview.png" alt="Gallery Image 6" class="w-full h-[300px] object-cover"
-            data-aos="fade-down" />
-        </div>
-        <div class="swiper-slide rounded-lg overflow-hidden">
-          <img src="./assets/overview.png" alt="Gallery Image 1" class="w-full h-[300px] object-cover"
-            data-aos="fade-up" />
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- HIGHLIGHTS -->
-  <section class="bg-[#F3F4F6] py-12 px-6">
-    <div class="max-w-7xl mx-auto">
-      <!-- Section Title -->
-      <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10">
-        Highlights
-      </h2>
-      <!-- Highlight Cards Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <!-- Card -->
-        <div
-          class="flex items-center border border-gray-200 rounded-lg shadow-sm p-5 bg-white space-x-4 hover:bg-gradient-to-r hover:from-white hover:to-green-100 transition-all duration-300"
-          data-aos="flip-up">
-          <div class="bg-green-100 text-green-600 p-3 rounded-full">
-            <i data-feather="map-pin" class="w-6 h-6"></i>
-          </div>
-          <p class="text-gray-800 text-base ">
-            Located just steps from Sector 142 Metro Station
-          </p>
-        </div>
-
-        <div
-          class="flex items-center border border-gray-200 rounded-lg shadow-sm p-5 bg-white space-x-4 hover:bg-gradient-to-r hover:from-white hover:to-green-100 transition-all duration-300"
-          data-aos="flip-up">
-          <div class="bg-green-100 text-green-600 p-3 rounded-full">
-            <i data-feather="clock" class="w-6 h-6"></i>
-          </div>
-          <p class="text-gray-800 text-base">
-            10 mins from DND Flyway | 15 mins from FNG Expressway
-          </p>
-        </div>
-
-        <div
-          class="flex items-center border border-gray-200 rounded-lg shadow-sm p-5 bg-white space-x-4 hover:bg-gradient-to-r hover:from-white hover:to-green-100 transition-all duration-300"
-          data-aos="flip-up">
-          <div class="bg-green-100 text-green-600 p-3 rounded-full">
-            <i data-feather="crosshair" class="w-6 h-6"></i>
-          </div>
-          <p class="text-gray-800 text-base">
-            5 mins from Felix Hospital | 49 mins from Jewar International Airport
-          </p>
-        </div>
-
-        <div
-          class="flex items-center border border-gray-200 rounded-lg shadow-sm p-5 bg-white space-x-4 hover:bg-gradient-to-r hover:from-white hover:to-green-100 transition-all duration-300"
-          data-aos="flip-up">
-          <div class="bg-green-100 text-green-600 p-3 rounded-full">
-            <i data-feather="briefcase" class="w-6 h-6"></i>
-          </div>
-          <p class="text-gray-800 text-base">
-            Surrounded by MNCs like British Airways, Infosys, Indigo
-          </p>
-        </div>
-
-        <div
-          class="flex items-center border border-gray-200 rounded-lg shadow-sm p-5 bg-white space-x-4 hover:bg-gradient-to-r hover:from-white hover:to-green-100 transition-all duration-300"
-          data-aos="flip-up">
-          <div class="bg-green-100 text-green-600 p-3 rounded-full">
-            <i data-feather="layers" class="w-6 h-6"></i>
-          </div>
-          <p class="text-gray-800 text-base">
-            Designed by leading architects with abstract, iconic enclosures
-          </p>
-        </div>
-
-        <div
-          class="flex items-center border border-gray-200 rounded-lg shadow-sm p-5 bg-white space-x-4 hover:bg-gradient-to-r hover:from-white hover:to-green-100 transition-all duration-300"
-          data-aos="flip-up">
-          <div class="bg-green-100 text-green-600 p-3 rounded-full">
-            <i data-feather="coffee" class="w-6 h-6"></i>
-          </div>
-          <p class="text-gray-800 text-base">
-            Climate-controlled alfresco-inspired food court experience
-          </p>
-        </div>
-
-        <div
-          class="flex items-center border border-gray-200 rounded-lg shadow-sm p-5 bg-white space-x-4 hover:bg-gradient-to-r hover:from-white hover:to-green-100 transition-all duration-300"
-          data-aos="flip-up">
-          <div class="bg-green-100 text-green-600 p-3 rounded-full">
-            <i data-feather="check-circle" class="w-6 h-6"></i>
-          </div>
-          <p class="text-gray-800 text-base">
-            Developed by Splendor Group, with 40+ years of trust
-          </p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-  <section class="bg-[#1C2C2B] py-12 px-4">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-
-      <!-- Left Content -->
-      <div>
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
-          Ready to Take the Lead?
+    <!-- HIGHLIGHTS -->
+    <section id="highlight" class="bg-[#F3F4F6] py-12 px-6">
+      <div class="max-w-7xl mx-auto">
+        <!-- Section Title -->
+        <h2
+          class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-10"
+        >
+          Highlights
         </h2>
-        <p class="text-lg text-white mb-6 max-w-xl">
-          Whether you're a visionary brand, an ambitious startup, or a high-end dining concept, <strong>ONYX by
-            Splendor</strong> is your stage to grow, impress, and lead.
-        </p>
-        <ul class="space-y-4 text-white text-base mb-6 max-w-xl">
-          <li class="flex items-start">
-            <span class="text-green-600 mr-2 mt-1">•</span>
-            📞 <strong>Schedule a Private Walkthrough</strong>
-          </li>
-          <li class="flex items-start">
-            <span class="text-green-600 mr-2 mt-1">•</span>
-            📩 <strong>Enquire Now for Pre-Leasing Opportunities</strong>
-          </li>
-          <li class="flex items-start">
-            <span class="text-green-600 mr-2 mt-1">•</span>
-            📄 <strong>Download the Brochure</strong>
-          </li>
-          <li class="flex items-start">
-            <span class="text-green-600 mr-2 mt-1">•</span>
-            Spaces are limited. <em>The future belongs to those who act first.</em>
-          </li>
-        </ul>
+        <!-- Highlight Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Card -->
+          <div
+            class="flex items-center border border-gray-200 rounded-lg shadow-sm p-5 bg-white space-x-4 hover:bg-gradient-to-r hover:from-white hover:to-green-100 transition-all duration-300"
+            data-aos="flip-up"
+          >
+            <div class="bg-green-100 text-green-600 p-3 rounded-full">
+              <i data-feather="map-pin" class="w-6 h-6"></i>
+            </div>
+            <p class="text-gray-800 text-base">
+              Located just steps from Sector 142 Metro Station
+            </p>
+          </div>
 
-        <!-- Download Brochure Button -->
-        <a href="#brochure"
-          class="inline-block bg-white hover:bg-green-50 text-green-700 border border-green-600 font-semibold py-3 px-6 rounded-lg transition duration-300">
-          Download Brochure
-        </a>
+          <div
+            class="flex items-center border border-gray-200 rounded-lg shadow-sm p-5 bg-white space-x-4 hover:bg-gradient-to-r hover:from-white hover:to-green-100 transition-all duration-300"
+            data-aos="flip-up"
+          >
+            <div class="bg-green-100 text-green-600 p-3 rounded-full">
+              <i data-feather="clock" class="w-6 h-6"></i>
+            </div>
+            <p class="text-gray-800 text-base">
+              10 mins from DND Flyway | 15 mins from FNG Expressway
+            </p>
+          </div>
+
+          <div
+            class="flex items-center border border-gray-200 rounded-lg shadow-sm p-5 bg-white space-x-4 hover:bg-gradient-to-r hover:from-white hover:to-green-100 transition-all duration-300"
+            data-aos="flip-up"
+          >
+            <div class="bg-green-100 text-green-600 p-3 rounded-full">
+              <i data-feather="crosshair" class="w-6 h-6"></i>
+            </div>
+            <p class="text-gray-800 text-base">
+              5 mins from Felix Hospital | 49 mins from Jewar International
+              Airport
+            </p>
+          </div>
+
+          <div
+            class="flex items-center border border-gray-200 rounded-lg shadow-sm p-5 bg-white space-x-4 hover:bg-gradient-to-r hover:from-white hover:to-green-100 transition-all duration-300"
+            data-aos="flip-up"
+          >
+            <div class="bg-green-100 text-green-600 p-3 rounded-full">
+              <i data-feather="briefcase" class="w-6 h-6"></i>
+            </div>
+            <p class="text-gray-800 text-base">
+              Surrounded by MNCs like British Airways, Infosys, Indigo
+            </p>
+          </div>
+
+          <div
+            class="flex items-center border border-gray-200 rounded-lg shadow-sm p-5 bg-white space-x-4 hover:bg-gradient-to-r hover:from-white hover:to-green-100 transition-all duration-300"
+            data-aos="flip-up"
+          >
+            <div class="bg-green-100 text-green-600 p-3 rounded-full">
+              <i data-feather="layers" class="w-6 h-6"></i>
+            </div>
+            <p class="text-gray-800 text-base">
+              Designed by leading architects with abstract, iconic enclosures
+            </p>
+          </div>
+
+          <div
+            class="flex items-center border border-gray-200 rounded-lg shadow-sm p-5 bg-white space-x-4 hover:bg-gradient-to-r hover:from-white hover:to-green-100 transition-all duration-300"
+            data-aos="flip-up"
+          >
+            <div class="bg-green-100 text-green-600 p-3 rounded-full">
+              <i data-feather="coffee" class="w-6 h-6"></i>
+            </div>
+            <p class="text-gray-800 text-base">
+              Climate-controlled alfresco-inspired food court experience
+            </p>
+          </div>
+
+          <div
+            class="flex items-center border border-gray-200 rounded-lg shadow-sm p-5 bg-white space-x-4 hover:bg-gradient-to-r hover:from-white hover:to-green-100 transition-all duration-300"
+            data-aos="flip-up"
+          >
+            <div class="bg-green-100 text-green-600 p-3 rounded-full">
+              <i data-feather="check-circle" class="w-6 h-6"></i>
+            </div>
+            <p class="text-gray-800 text-base">
+              Developed by Splendor Group, with 40+ years of trust
+            </p>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <!-- Right Form -->
-      <form class="bg-white p-8 rounded-lg shadow-lg max-w-xl w-full mx-auto space-y-6">
+    <section id="contact" class="bg-[#1C2C2B] py-12 px-4">
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center"
+      >
+        <!-- Left Content -->
         <div>
-          <label for="name" class="block text-gray-700 font-semibold mb-2">Name</label>
-          <input type="text" id="name" name="name" required
-            class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500" />
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+            Ready to Take the Lead?
+          </h2>
+          <p class="text-lg text-white mb-6 max-w-xl">
+            Whether you're a visionary brand, an ambitious startup, or a
+            high-end dining concept, <strong>ONYX by Splendor</strong> is your
+            stage to grow, impress, and lead.
+          </p>
+          <ul class="space-y-4 text-white text-base mb-6 max-w-xl">
+            <li class="flex items-start">
+              <span class="text-green-600 mr-2 mt-1">•</span>
+              📞 <strong>Schedule a Private Walkthrough</strong>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-600 mr-2 mt-1">•</span>
+              📩 <strong>Enquire Now for Pre-Leasing Opportunities</strong>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-600 mr-2 mt-1">•</span>
+              📄 <strong>Download the Brochure</strong>
+            </li>
+            <li class="flex items-start">
+              <span class="text-green-600 mr-2 mt-1">•</span>
+              Spaces are limited.
+              <em>The future belongs to those who act first.</em>
+            </li>
+          </ul>
+
+          <!-- Download Brochure Button -->
+          <a
+            href="#brochure"
+            class="inline-block bg-white hover:bg-green-50 text-green-700 border border-green-600 font-semibold py-3 px-6 rounded-lg transition duration-300"
+          >
+            Download Brochure
+          </a>
         </div>
 
-        <div>
-          <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
-          <input type="email" id="email" name="email" required
-            class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500" />
-        </div>
+        <!-- Right Form -->
+        <form
+          class="bg-white p-8 rounded-lg shadow-lg max-w-xl w-full mx-auto space-y-6"
+        >
+          <div>
+            <label for="name" class="block text-gray-700 font-semibold mb-2"
+              >Name</label
+            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+            />
+          </div>
 
-        <div>
-          <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
-          <textarea id="message" name="message" rows="4"
-            class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
-        </div>
+          <div>
+            <label for="email" class="block text-gray-700 font-semibold mb-2"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+            />
+          </div>
 
-        <!-- Enquire Now Button aligned center -->
-        <button type="submit"
-          class="w-full bg-[#162D23] hover:bg-[#3AB34A] cursor-pointer text-white font-semibold py-3 rounded-lg transition duration-300">
-          Enquire Now
-        </button>
-      </form>
+          <div>
+            <label for="message" class="block text-gray-700 font-semibold mb-2"
+              >Message</label
+            >
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              class="w-full border border-gray-300 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+            ></textarea>
+          </div>
 
-    </div>
-  </section>
-
-  <button id="scrollToTop"
-    class="md:flex fixed bottom-8 right-8 bg-green-600 hover:bg-green-700 text-white p-3 rounded-full shadow-lg transition-opacity duration-300 opacity-0 pointer-events-none z-50"
-    aria-label="Scroll to top" style="display: none;">
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-      stroke-width="2">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
-    </svg>
-  </button>
-
-  <script>
-    const scrollBtn = document.getElementById('scrollToTop');
-
-    // Show/hide with opacity and pointer-events
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 100) {
-        scrollBtn.style.display = "flex";  // show button container
-        setTimeout(() => {
-          scrollBtn.classList.remove('opacity-0', 'pointer-events-none');
-        }, 10);
-      } else {
-        scrollBtn.classList.add('opacity-0', 'pointer-events-none');
-        // Hide after transition to avoid it blocking clicks
-        setTimeout(() => {
-          scrollBtn.style.display = "none";
-        }, 300); // match transition duration
-      }
-    });
-
-    scrollBtn.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  </script>
-
-  <!-- Popup Overlay -->
-  <div id="popupOverlay"
-    class="fixed inset-0 bg-black/80 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 z-50">
-    <!-- Popup Container -->
-    <div id="popupContainer"
-      class="bg-white rounded-lg shadow-lg max-w-4xl w-full mx-4 md:mx-0 flex flex-col md:flex-row overflow-hidden transform scale-90 opacity-0 transition-all duration-300">
-      <!-- Left Image -->
-      <div class="md:w-1/2 h-64 md:h-auto">
-        <img src="./assets/hero_bg.png" alt="Popup Image" class="w-full h-full object-cover" />
-      </div>
-
-      <!-- Right Form -->
-      <div class="md:w-1/2 p-8 relative">
-        <!-- Close Button -->
-        <button id="popupCloseBtn"
-          class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl font-bold focus:outline-none"
-          aria-label="Close popup">
-          &times;
-        </button>
-
-        <h2 class="text-2xl font-bold mb-6">Get in Touch</h2>
-        <form class="space-y-4">
-          <input type="text" placeholder="Your Name"
-            class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-600"
-            required />
-          <input type="email" placeholder="Your Email"
-            class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-600"
-            required />
-          <textarea placeholder="Your Message" rows="4"
-            class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-600"
-            required></textarea>
-          <button type="submit"
-            class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded transition">
-            Submit
+          <!-- Enquire Now Button aligned center -->
+          <button
+            type="submit"
+            class="w-full bg-[#162D23] hover:bg-[#3AB34A] cursor-pointer text-white font-semibold py-3 rounded-lg transition duration-300"
+          >
+            Enquire Now
           </button>
         </form>
       </div>
+    </section>
+
+    <button
+      id="scrollToTop"
+      class="md:flex fixed bottom-8 right-8 bg-green-600 hover:bg-green-700 text-white p-3 rounded-full shadow-lg transition-opacity duration-300 opacity-0 pointer-events-none z-50"
+      aria-label="Scroll to top"
+      style="display: none"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+        stroke-width="2"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M5 15l7-7 7 7"
+        />
+      </svg>
+    </button>
+
+    <script>
+      const scrollBtn = document.getElementById("scrollToTop");
+
+      // Show/hide with opacity and pointer-events
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 100) {
+          scrollBtn.style.display = "flex"; // show button container
+          setTimeout(() => {
+            scrollBtn.classList.remove("opacity-0", "pointer-events-none");
+          }, 10);
+        } else {
+          scrollBtn.classList.add("opacity-0", "pointer-events-none");
+          // Hide after transition to avoid it blocking clicks
+          setTimeout(() => {
+            scrollBtn.style.display = "none";
+          }, 300); // match transition duration
+        }
+      });
+
+      scrollBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    </script>
+
+    <!-- Popup Overlay -->
+    <div
+      id="popupOverlay"
+      class="fixed inset-0 bg-black/80 flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 z-50"
+    >
+      <!-- Popup Container -->
+      <div
+        id="popupContainer"
+        class="bg-white rounded-lg shadow-lg max-w-4xl w-full mx-4 md:mx-0 flex flex-col md:flex-row overflow-hidden transform scale-90 opacity-0 transition-all duration-300"
+      >
+        <!-- Left Image -->
+        <div class="md:w-1/2 h-64 md:h-auto">
+          <img
+            src="./assets/hero_bg.png"
+            alt="Popup Image"
+            class="w-full h-full object-cover"
+          />
+        </div>
+
+        <!-- Right Form -->
+        <div class="md:w-1/2 p-8 relative">
+          <!-- Close Button -->
+          <button
+            id="popupCloseBtn"
+            class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl font-bold focus:outline-none"
+            aria-label="Close popup"
+          >
+            &times;
+          </button>
+
+          <h2 class="text-2xl font-bold mb-6">Get in Touch</h2>
+          <form class="space-y-4">
+            <input
+              type="text"
+              placeholder="Your Name"
+              class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-600"
+              required
+            />
+            <input
+              type="email"
+              placeholder="Your Email"
+              class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-600"
+              required
+            />
+            <textarea
+              placeholder="Your Message"
+              rows="4"
+              class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-600"
+              required
+            ></textarea>
+            <button
+              type="submit"
+              class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded transition"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <script>
-    const popupOverlay = document.getElementById('popupOverlay');
-    const popupContainer = document.getElementById('popupContainer');
-    const closeBtn = document.getElementById('popupCloseBtn');
+    <script>
+      const popupOverlay = document.getElementById("popupOverlay");
+      const popupContainer = document.getElementById("popupContainer");
+      const closeBtn = document.getElementById("popupCloseBtn");
 
-    // Function to show popup with animation
-    function showPopup() {
-      popupOverlay.style.pointerEvents = 'auto';
-      popupOverlay.classList.remove('opacity-0');
-      popupOverlay.classList.add('opacity-100');
+      // Function to show popup with animation
+      function showPopup() {
+        popupOverlay.style.pointerEvents = "auto";
+        popupOverlay.classList.remove("opacity-0");
+        popupOverlay.classList.add("opacity-100");
 
-      // Animate popup container scale & opacity
-      popupContainer.style.opacity = '1';
-      popupContainer.style.transform = 'scale(1)';
-    }
-
-    // Function to hide popup with animation
-    function hidePopup() {
-      popupOverlay.classList.remove('opacity-100');
-      popupOverlay.classList.add('opacity-0');
-      popupOverlay.style.pointerEvents = 'none';
-
-      popupContainer.style.opacity = '0';
-      popupContainer.style.transform = 'scale(0.9)';
-    }
-
-    // Show popup after 1 second on page load
-    window.addEventListener('load', () => {
-      setTimeout(showPopup, 1000);
-    });
-
-    // Close popup on close button click
-    closeBtn.addEventListener('click', hidePopup);
-
-    // Close popup on clicking outside the container
-    popupOverlay.addEventListener('click', (e) => {
-      if (e.target === popupOverlay) {
-        hidePopup();
+        // Animate popup container scale & opacity
+        popupContainer.style.opacity = "1";
+        popupContainer.style.transform = "scale(1)";
       }
-    });
 
-    // Optional: prevent form submission for demo
-    document.querySelector('form').addEventListener('submit', (e) => {
-      e.preventDefault();
-      alert('Form submitted!');
-      hidePopup();
-    });
-  </script>
+      // Function to hide popup with animation
+      function hidePopup() {
+        popupOverlay.classList.remove("opacity-100");
+        popupOverlay.classList.add("opacity-0");
+        popupOverlay.style.pointerEvents = "none";
 
+        popupContainer.style.opacity = "0";
+        popupContainer.style.transform = "scale(0.9)";
+      }
 
+      // Show popup after 1 second on page load
+      window.addEventListener("load", () => {
+        setTimeout(showPopup, 1000);
+      });
 
-  <!-- DO NOT CHANGE BELOW THIS COMMENT -->
-  <script src="script.js"></script>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-  <script>
-    AOS.init();
-    feather.replace();
-  </script>
-  <script>
-    const swiper = new Swiper('.swiper', {
-      loop: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true
-      },
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev'
-      },
-      autoplay: true,
-    });
-  </script>
-  <script>
-    const gallerySwiper = new Swiper(".swiper-gallery", {
-      slidesPerView: 1,
-      spaceBetween: 10,
-      breakpoints: {
-        640: {
-          slidesPerView: 1,
-          spaceBetween: 15,
+      // Close popup on close button click
+      closeBtn.addEventListener("click", hidePopup);
+
+      // Close popup on clicking outside the container
+      popupOverlay.addEventListener("click", (e) => {
+        if (e.target === popupOverlay) {
+          hidePopup();
+        }
+      });
+
+      // Optional: prevent form submission for demo
+      document.querySelector("form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        alert("Form submitted!");
+        hidePopup();
+      });
+    </script>
+
+    <!-- DO NOT CHANGE BELOW THIS COMMENT -->
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+      AOS.init();
+      feather.replace();
+    </script>
+    <script>
+      const swiper = new Swiper(".swiper", {
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
         },
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 20,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         },
-        1024: {
-          slidesPerView: 3,
-          spaceBetween: 25,
+        autoplay: true,
+      });
+    </script>
+    <script>
+      const gallerySwiper = new Swiper(".swiper-gallery", {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        breakpoints: {
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 15,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 25,
+          },
+          1280: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+          },
         },
-        1280: {
-          slidesPerView: 4,
-          spaceBetween: 30,
-        },
-      },
-      pagination: false,
-      navigation: false,
-      autoplay: true
-    });
-  </script>
-</body>
-
+        pagination: false,
+        navigation: false,
+        autoplay: true,
+      });
+    </script>
+  </body>
 </html>
