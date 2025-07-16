@@ -51,3 +51,6 @@ mobileMenu.querySelectorAll("a").forEach((link) => {
     closeMobileMenu();
   });
 });
+
+
+// Projects

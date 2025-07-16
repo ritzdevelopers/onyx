@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
     integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
   <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
     integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
@@ -187,72 +187,89 @@
     </div>
   </section>
 
-  <!-- Project Offerings Section -->
-  <section class="bg-white py-16 px-4 sm:px-6 lg:px-20 overflow-hidden">
-    <h2 class="text-3xl sm:text-4xl font-bold text-center text-[#3AB24B] mb-12">Project Offerings</h2>
 
-    <div class="space-y-24 max-w-screen-xl mx-auto">
+  <!-- Projects -->
+  <section class="items-center justify-center min-h-screen">
 
-      <!-- Offering 1 -->
-      <div class="flex flex-col lg:flex-row items-center gap-12" data-aos="fade-right">
-        <div class="w-full lg:w-1/2 flex justify-center">
-          <img src="./assets/overview.png" alt="Office Spaces" class="w-full max-w-[600px] rounded-xl shadow-lg">
+    <h1 class="text-[25px] sm:text-[32px] text-center pt-10 md:text-[38px] font-bold text-[#3AB24B] mb-2">PROJECT
+      OFFERINGS
+    </h1>
+
+    <div class="swiper w-[90vw] h-[80vh]">
+      <div class="swiper-wrapper">
+        <!-- Slide 1 -->
+        <div class="swiper-slide slide-bg relative" style="background-image: url('./assets/hero_bg.png');">
+          <!-- Overlay to center text -->
+          <div class="absolute inset-0 bg-black/40 flex items-center justify-center text-center px-4">
+            <div class="text-white">
+              <h2 class="text-3xl md:text-5xl font-bold mb-4">Office Spaces</h2>
+              <p class="text-lg md:text-xl text-center max-w-2xl">Modern and efficient spaces with sizes
+                starting from
+                526 sq ft.
+                curated for
+                rapidly growing enterprises and
+                well-established corporate enterprises. Complemented by a grand lobby, high-speed elevators, and
+                multiple breakout zones
+                that redefine the working experience.
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="w-full lg:w-1/2 px-4">
-          <h3 class="text-[25px] font-semibold text-[#3AB24B] mb-4">Office Spaces</h3>
-          <p class="text-gray-700 text-[20px]">
-            Modern and efficient spaces with sizes starting from 526 sq ft. Curated for rapidly growing enterprises and
-            well-established corporate enterprises. Complemented by a grand lobby, high-speed elevators, and multiple
-            breakout zones that redefine the working experience.
-          </p>
+
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide slide-bg relative" style="background-image: url('./assets/hero_bg.png');">
+          <!-- Overlay to center text -->
+          <div class="absolute inset-0 bg-black/40 flex items-center justify-center text-center px-4">
+            <div class="text-white">
+              <h2 class="text-3xl md:text-5xl font-bold mb-4">Retail Spaces</h2>
+              <p class="text-lg md:text-xl text-center max-w-2xl">Retail stores with double floor height are optimized
+                for premium footfall.
+                These spaces are ideal for Fashion,
+                Lifestyle, Wellness, and Anchor Brands that aim to tap into the high-income catchment.</p>
+            </div>
+          </div>
         </div>
+
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide slide-bg relative" style="background-image: url('./assets/hero_bg.png');">
+          <!-- Overlay to center text -->
+          <div class="absolute inset-0 bg-black/40 flex items-center justify-center text-center px-4">
+            <div class="text-white">
+              <h2 class="text-3xl md:text-5xl font-bold mb-4">Food Court – Gourmet @ ONYX</h2>
+              <p class="text-lg md:text-xl text-center max-w-2xl">NOIDA’s upcoming gourmet destination that blends
+                global culinary experiences
+                and abstract design with a
+                climate-controlled environment. It is perfect for global franchise restaurants looking to tap into
+                NOIDA’s elite
+                consumer base.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="swiper-slide slide-bg relative" style="background-image: url('./assets/hero_bg.png');">
+          <!-- Overlay to center text -->
+          <div class="absolute inset-0 bg-black/40 flex items-center justify-center text-center px-4">
+            <div class="text-white">
+              <h2 class="text-3xl md:text-5xl font-bold mb-4">Office Suites</h2>
+              <p class="text-lg md:text-xl text-center max-w-2xl">Efficient and spacious business suites that are built
+                for professionals,
+                Consultants, Startups, and Satellite Offices.
+                These spaces offer a Plug-and-play design that meets all requirements of privacy and performance.</p>
+            </div>
+          </div>
+        </div>
+
       </div>
 
-      <!-- Offering 2 -->
-      <div class="flex flex-col lg:flex-row-reverse items-center gap-12" data-aos="fade-left">
-        <div class="w-full lg:w-1/2 flex justify-center">
-          <img src="./assets/overview.png" alt="Retail Shops" class="w-full max-w-[600px] rounded-xl shadow-lg">
-        </div>
-        <div class="w-full lg:w-1/2 px-4">
-          <h3 class="text-2xl font-semibold text-[#3AB24B] mb-4">High-Street Retail Shops</h3>
-          <p class="text-gray-700 text-[20px]">
-            Strategically located retail spaces to attract footfall and maximize visibility. Ideal for brands looking to
-            make a strong impact.
-          </p>
-        </div>
-      </div>
-
-      <!-- Offering 3 -->
-      <div class="flex flex-col lg:flex-row items-center gap-12" data-aos="fade-right">
-        <div class="w-full lg:w-1/2 flex justify-center">
-          <img src="./assets/overview.png" alt="Food Court" class="w-full max-w-[600px] rounded-xl shadow-lg">
-        </div>
-        <div class="w-full lg:w-1/2 px-4">
-          <h3 class="text-2xl font-semibold text-[#3AB24B] mb-4">Vibrant Food Court</h3>
-          <p class="text-gray-700 text-[20px]">
-            A lively space offering a variety of cuisines, perfect for casual dining, quick bites, and social gatherings
-            within a dynamic environment.
-          </p>
-        </div>
-      </div>
-
-      <!-- Offering 4 -->
-      <div class="flex flex-col lg:flex-row-reverse items-center gap-12" data-aos="fade-left">
-        <div class="w-full lg:w-1/2 flex justify-center">
-          <img src="./assets/overview.png" alt="Serviced Apartments" class="w-full max-w-[600px] rounded-xl shadow-lg">
-        </div>
-        <div class="w-full lg:w-1/2 px-4">
-          <h3 class="text-2xl font-semibold text-[#3AB24B] mb-4">Luxury Serviced Apartments</h3>
-          <p class="text-gray-700 text-[20px]">
-            Fully furnished apartments offering comfort, convenience, and style for professionals and travelers seeking
-            premium accommodation.
-          </p>
-        </div>
-      </div>
-
+      <!-- Swiper Controls -->
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
     </div>
   </section>
-
 
 
 
@@ -260,9 +277,23 @@
   <!-- DO NOT CHANGE BELOW THIS COMMENT -->
   <script src="script.js"></script>
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
   <script>
     AOS.init();
+  </script>
+  <script>
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
+      autoplay: true,
+    });
   </script>
 </body>
 
