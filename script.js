@@ -52,5 +52,49 @@ mobileMenu.querySelectorAll("a").forEach((link) => {
   });
 });
 
+// heroForm
+document.getElementById("heroForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+  const form = e.target;
 
-// Projects
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // Prevent form reload
+
+    const formData = {
+      name: form.name.value.trim(),
+      email: form.email.value.trim(),
+      message: form.message.value.trim(),
+    };
+
+    // Basic validation
+    if (!formData.name || !formData.email || !formData.message) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+
+    // Submit to Google Apps Script endpoint
+    fetch(
+      "https://script.google.com/macros/s/AKfycbwFUrsuEzkLUjc07z9MXmKwKSb1zGNo8gCJrmNLI0mCqkhopIjdHYqzvT2zcTKMpqL7Xg/exec", // Replace with your actual URL
+      {
+        method: "POST",
+        body: JSON.stringify(formData),
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.result === "success") {
+          alert("Form submitted successfully!");
+          form.reset();
+          document
+            .getElementById("popupOverlay")
+            .classList.add("opacity-0", "pointer-events-none");
+        } else {
+          alert("Submission failed: " + (data.message || "Unknown error"));
+        }
+      })
+      .catch((err) => {
+        console.error("Submission Error:", err);
+        alert("Submission failed. Please try again.");
+      });
+  });
+});

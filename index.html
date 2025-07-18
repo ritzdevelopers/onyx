@@ -188,25 +188,31 @@
             Please fill out the form below, our expert will get back to you
             soon.
           </p>
-          <form class="space-y-4 mt-5">
+          <form class="space-y-4 mt-5" id="heroForm">
             <div>
               <input
                 type="text"
+                name="name"
                 placeholder="Your full name"
+                required
                 class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-[#324F43]"
               />
             </div>
             <div>
               <input
                 type="email"
+                name="email"
                 placeholder="you@example.com"
+                required
                 class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-[#324F43]"
               />
             </div>
             <div>
               <input
-                type="tel"
-                placeholder="+1 234 567 8900"
+                type="text"
+                name="message"
+                placeholder="Your message"
+                required
                 class="w-full px-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-[#324F43]"
               />
             </div>
@@ -804,6 +810,7 @@
 
         <!-- Right Form -->
         <form
+          id="contactForm"
           class="bg-white p-8 rounded-lg shadow-lg max-w-xl w-full mx-auto space-y-6"
         >
           <div>
@@ -901,6 +908,48 @@
       });
     </script>
 
+    <!-- hero form -->
+    <script>
+      const heroForm = document.getElementById("heroForm");
+
+      heroForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const formData = {
+          name: heroForm.name.value.trim(),
+          email: heroForm.email.value.trim(),
+          message: heroForm.message.value.trim(),
+        };
+
+        // Basic validation
+        if (!formData.name || !formData.email || !formData.message) {
+          alert("Please fill in all fields.");
+          return;
+        }
+
+        fetch(
+          "https://script.google.com/macros/s/AKfycbwFUrsuEzkLUjc07z9MXmKwKSb1zGNo8gCJrmNLI0mCqkhopIjdHYqzvT2zcTKMpqL7Xg/exec",
+          {
+            method: "POST",
+            body: JSON.stringify(formData),
+          }
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.result === "success") {
+              window.location.href = "thankyou.html";
+              heroForm.reset();
+            } else {
+              alert("Submission failed: " + (data.message || "Unknown error"));
+            }
+          })
+          .catch((err) => {
+            console.error("Submission Error:", err);
+            alert("Something went wrong. Please try again.");
+          });
+      });
+    </script>
+
     <!-- Popup Overlay -->
     <div
       id="popupOverlay"
@@ -932,21 +981,24 @@
           </button>
 
           <h2 class="text-2xl font-bold mb-6">Get in Touch</h2>
-          <form class="space-y-4">
+          <form class="space-y-4" id="popupForm">
             <input
               type="text"
               placeholder="Your Name"
+              name="name"
               class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-600"
               required
             />
             <input
               type="email"
               placeholder="Your Email"
+              name="email"
               class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-600"
               required
             />
             <textarea
               placeholder="Your Message"
+              name="message"
               rows="4"
               class="w-full border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-600"
               required
@@ -961,6 +1013,48 @@
         </div>
       </div>
     </div>
+    <!-- contact form -->
+    <script>
+      const contactForm = document.getElementById("contactForm");
+
+      contactForm.addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent form reload
+
+        const formData = {
+          name: contactForm.name.value.trim(),
+          email: contactForm.email.value.trim(),
+          message: contactForm.message.value.trim(),
+        };
+
+        // Basic validation
+        if (!formData.name || !formData.email || !formData.message) {
+          alert("Please fill in all required fields.");
+          return;
+        }
+
+        // Send to Google Apps Script
+        fetch(
+          "https://script.google.com/macros/s/AKfycbwFUrsuEzkLUjc07z9MXmKwKSb1zGNo8gCJrmNLI0mCqkhopIjdHYqzvT2zcTKMpqL7Xg/exec",
+          {
+            method: "POST",
+            body: JSON.stringify(formData),
+          }
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.result === "success") {
+              window.location.href = "thankyou.html";
+              contactForm.reset();
+            } else {
+              alert("Submission failed: " + (data.message || "Unknown error"));
+            }
+          })
+          .catch((err) => {
+            console.error("Submission Error:", err);
+            alert("Submission failed. Please try again.");
+          });
+      });
+    </script>
 
     <script>
       const popupOverlay = document.getElementById("popupOverlay");
@@ -1004,10 +1098,54 @@
       });
 
       // Optional: prevent form submission for demo
-      document.querySelector("form").addEventListener("submit", (e) => {
-        e.preventDefault();
-        alert("Form submitted!");
-        hidePopup();
+      // document.querySelector("form").addEventListener("submit", (e) => {
+      //   e.preventDefault();
+      //   alert("Form submitted!");
+      //   hidePopup();
+      // });
+    </script>
+    <script>
+      const form = document.getElementById("popupForm");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault(); // Prevent form reload
+
+        const formData = {
+          name: form.name.value.trim(),
+          email: form.email.value.trim(),
+          message: form.message.value.trim(),
+        };
+
+        // Basic validation
+        if (!formData.name || !formData.email || !formData.message) {
+          alert("Please fill in all required fields.");
+          return;
+        }
+
+        // Submit to Google Apps Script endpoint
+        fetch(
+          "https://script.google.com/macros/s/AKfycbwFUrsuEzkLUjc07z9MXmKwKSb1zGNo8gCJrmNLI0mCqkhopIjdHYqzvT2zcTKMpqL7Xg/exec", // Replace with your actual URL
+          {
+            method: "POST",
+            body: JSON.stringify(formData),
+          }
+        )
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.result === "success") {
+              window.location.href = "./thankyou.html";
+              form.reset();
+              document
+                .getElementById("popupOverlay")
+                .classList.add("opacity-0", "pointer-events-none");
+            } else {
+              alert("Submission failed: " + (data.message || "Unknown error"));
+            }
+          })
+          .catch((err) => {
+            console.error("Submission Error:", err);
+            alert("Submission failed. Please try again.");
+          });
       });
     </script>
 
